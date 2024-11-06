@@ -1,4 +1,3 @@
-import React from "react";
 import { animated, useSpring } from "@react-spring/three";
 
 function Snake({ position }) {

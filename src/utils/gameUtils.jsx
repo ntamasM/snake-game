@@ -1,12 +1,12 @@
-// src/utils/gameUtils.js
+const BOUNDARY = 5; // Use the same boundary constant here
 
 // Function to generate a random position for food or obstacles
 export function getRandomPosition() {
-  return [
-    Math.floor(Math.random() * 10) - 5,
-    Math.floor(Math.random() * 10) - 5,
-    0,
-  ];
+  const min = -BOUNDARY + 1;
+  const max = BOUNDARY - 1;
+  const x = Math.floor(Math.random() * (max - min + 1)) + min;
+  const y = Math.floor(Math.random() * (max - min + 1)) + min;
+  return [x, y, 0]; // Fixed Z axis for 2D gameplay
 }
 
 // Function to check if two positions are close enough to consider a "collision"
